@@ -1,0 +1,232 @@
+/* Overlay do Modal - Fundo escuro */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Animação de aparecer */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Caixa branca do modal */
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Animação de subir */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Cabeçalho com imagem (opcional) */
+.modal-header {
+  position: relative;
+  width: 100%;
+}
+
+.modal-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Botão de fechar */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  z-index: 10;
+}
+
+.close-btn:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* Corpo do modal */
+.modal-body {
+  padding: 30px;
+}
+
+/* Título */
+.modal-title {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Descrição */
+.modal-description {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1.05em;
+  margin-bottom: 20px;
+  white-space: pre-line; /* Preserva quebras de linha */
+}
+
+/* Seção de tecnologias */
+.tech-stack {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.tech-stack h3 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.3em;
+}
+
+/* Container das tags */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Tag individual */
+.tech-tag {
+  background: #e9ecef;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  color: #495057;
+  font-weight: 500;
+}
+
+/* Links do projeto */
+.modal-links {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+/* Botões de link */
+.link-btn {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.link-btn.primary {
+  background: #28a745;
+  color: white;
+}
+
+.link-btn.primary:hover {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.link-btn.secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.link-btn.secondary:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+/* Customização da barra de rolagem */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .modal-title {
+    font-size: 1.5em;
+  }
+
+  .modal-description {
+    font-size: 1em;
+  }
+
+  .modal-image {
+    height: 200px;
+  }
+
+  .modal-links {
+    flex-direction: column;
+  }
+
+  .link-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,360 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+}
+
+.nav {
+  background-color: #333;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  max-width: 75px;
+  height: auto;
+  object-fit: contain;
+  margin-left: 8rem;
+  border-radius: 50%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.05);
+}
+.nav ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-right: 8rem;
+  list-style: none;
+  flex-direction: row;
+  position: static;
+  background-color: transparent;
+  width: auto;
+  padding: 0;
+  transition: none;
+}
+
+.nav li {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.nav a,
+.nav li {
+  color: white;
+  text-decoration: none;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav a,
+.nav li:hover {
+  transform: scale(1.05);
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+  z-index: 1001;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-logo {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  max-width: 100px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 50%;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.footer-logo.active {
+  display: block;
+  opacity: 1;
+}
+
+.main-content h1 {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #222;
+}
+
+.introduction {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stacks {
+  font-weight: bold;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+}
+
+.stacks ul {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.stacks h3 {
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.stacks img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  background-color: white;
+  margin: 2rem auto;
+  max-width: 1400px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 2rem;
+  color: #222;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.project-image-container img {
+  width: 600px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-image-container img:hover {
+  transform: perspective(1000px) rotateY(-8deg) rotateX(3deg);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.btn-modal {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.btn-modal button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-modal button:hover {
+  font-weight: bold;
+}
+.btn-modal button:active {
+  background-color: #333333;
+}
+.jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.jobs ul {
+  list-style: none;
+  padding-left: 0;
+}
+.jobs li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #555;
+  transition: all 0.3s ease;
+}
+.jobs li:hover {
+  transform: scale(1.05);
+}
+
+.footerSection {
+  margin-bottom: 50px;
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  text-align: center;
+}
+.footerSection span {
+  color: #666;
+  font-size: 0.9rem;
+}
+.footerSection a {
+  margin-top: 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: all 0.3s ease;
+
+  cursor: pointer;
+}
+.footerSection a:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .projects {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-image-container {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .project-details {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 1rem;
+    z-index: 1002;
+  }
+
+  .nav {
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  .main-content h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 1002;
+  }
+
+  .menu-toggle .open-icon {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .menu-toggle .close-icon {
+    font-size: 2.5rem;
+    color: white;
+  }
+
+  .nav ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    z-index: 999;
+
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10%;
+    margin-right: 0;
+    gap: 2rem;
+  }
+
+  .nav ul.active {
+    transform: translateX(0);
+  }
+
+  .nav a {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 0;
+  }
+
+  .nav ul li {
+    padding: 0;
+    width: auto;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  .nav ul.active li:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+  .nav ul.active li:nth-child(2) {
+    transition-delay: 0.3s;
+  }
+  .nav ul.active li:nth-child(3) {
+    transition-delay: 0.4s;
+  }
+  .nav ul.active li:nth-child(4) {
+    transition-delay: 0.5s;
+  }
+
+  .nav ul.active li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
