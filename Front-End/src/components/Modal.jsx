@@ -9,44 +9,53 @@ function Modal({ isOpen, onClose, project }) {
       }
     };
 
-    // Adiciona o listener quando o modal abre
     if (isOpen) {
       window.addEventListener("keydown", handleEsc);
-      document.body.style.overflow = "hidden"; // Remove scroll da página
+      document.body.style.overflow = "hidden";
     }
 
-    // Cleanup: remove o listener quando o modal fecha
     return () => {
       window.removeEventListener("keydown", handleEsc);
-      document.body.style.overflow = "auto"; // Restaura scroll
+      document.body.style.overflow = "auto";
     };
   }, [isOpen, onClose]);
 
   if (!isOpen || !project) return null;
 
-  // Função para fechar ao clicar no overlay (fundo escuro)
   const handleOverlayClick = (e) => {
-    // Se clicar exatamente no overlay (não na modal-content)
-    if (e.target.className === "modal active") {
+    if (e.target.className === "modal-overlay active") {
       onClose();
     }
   };
 
   return (
-    <div className="modal active" onClick={handleOverlayClick}>
+    <div className="modal-overlay active" onClick={handleOverlayClick}>
       <div className="modal-content">
-        <button className="close-btn" onClick={onClose}>
-          &times;
+        <button
+          className="modal-close"
+          onClick={onClose}
+          aria-label="Fechar modal"
+        >
+          <span>&times;</span>
         </button>
 
-        <div className="modal-body">
+        <div className="modal-header">
           <h2 className="modal-title">{project.title}</h2>
+        </div>
 
-          <p className="modal-description">{project.description}</p>
+        <div className="modal-body">
+          <div className="modal-description">
+            {project.description.split("\n\n").map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
 
           {project.techStack && project.techStack.length > 0 && (
-            <div className="tech-stack">
-              <h3>Tecnologias Utilizadas</h3>
+            <div className="modal-tech-stack">
+              <h3 className="tech-title">
+                <span className="tech-icon">🛠️</span>
+                Tecnologias Utilizadas
+              </h3>
               <div className="tech-tags">
                 {project.techStack.map((tech, index) => (
                   <span key={index} className="tech-tag">
@@ -57,15 +66,16 @@ function Modal({ isOpen, onClose, project }) {
             </div>
           )}
 
-          <div className="modal-links">
+          <div className="modal-footer">
             {project.liveLink && (
               <a
                 href={project.liveLink}
                 target="_blank"
                 rel="noreferrer"
-                className="link-btn primary"
+                className="modal-btn primary"
               >
-                Ver Projeto
+                <span className="btn-icon"></span>
+                Ver Projeto ao Vivo
               </a>
             )}
             {project.githubLink && (
@@ -73,9 +83,10 @@ function Modal({ isOpen, onClose, project }) {
                 href={project.githubLink}
                 target="_blank"
                 rel="noreferrer"
-                className="link-btn secondary"
+                className="modal-btn secondary"
               >
-                Ver Código
+                <span className="btn-icon"></span>
+                Ver Código no GitHub
               </a>
             )}
           </div>
