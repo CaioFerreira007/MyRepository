@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "../styles/Certifications.css";
 
-// Importação dos certificados da pasta assets/certifications
 import backendjr from "../assets/certifications/backendjr.pdf";
 import csharpCompleto from "../assets/certifications/cscompletonelioalves.pdf";
 import fundamentosCsharp from "../assets/certifications/fundamentoscsbaltaio.jpeg";
@@ -21,7 +20,6 @@ function Certifications() {
       institution: "Balta.io",
       date: "Jul 2025",
       duration: "12h",
-      badge: "🔷",
       category: "backend",
       level: "Fundamentos",
       color: "#8b5cf6",
@@ -42,7 +40,6 @@ function Certifications() {
       institution: "RocketSeat",
       date: "Abr 2024",
       duration: "12h",
-      badge: "🎨",
       category: "frontend",
       level: "Fundamentos",
       color: "#00d9ff",
@@ -64,7 +61,6 @@ function Certifications() {
       institution: "RocketSeat",
       date: "Mai 2024",
       duration: "2h",
-      badge: "🔀",
       category: "tools",
       level: "Básico",
       color: "#9b59b6",
@@ -85,7 +81,6 @@ function Certifications() {
       institution: "RocketSeat",
       date: "Abr 2024",
       duration: "18h",
-      badge: "⚡",
       category: "frontend",
       level: "Intermediário",
       color: "#00d9ff",
@@ -108,7 +103,6 @@ function Certifications() {
       institution: "RocketSeat",
       date: "Jul 2024",
       duration: "8h",
-      badge: "🚀",
       category: "backend",
       level: "Júnior",
       color: "#9b59b6",
@@ -131,7 +125,6 @@ function Certifications() {
       institution: "Udemy",
       date: "Mai 2025",
       duration: "30.5h",
-      badge: "🧮",
       category: "fundamentals",
       level: "Completo",
       color: "#8b5cf6",
@@ -153,7 +146,6 @@ function Certifications() {
       institution: "Udemy",
       date: "Jul 2025",
       duration: "38h",
-      badge: "🏆",
       category: "backend",
       level: "Avançado",
       color: "#00d9ff",

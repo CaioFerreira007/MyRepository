@@ -70,14 +70,12 @@ function Contact() {
 
   const socialLinks = [
     {
-      icon: "💻",
       name: "GitHub",
       username: "@CaioFerreira007",
       url: "https://github.com/CaioFerreira007",
       color: "#00d9ff",
     },
     {
-      icon: "💼",
       name: "LinkedIn",
       username: "Caio Gustavo",
       url: "https://www.linkedin.com/in/caio-ferreira-037820229/",
@@ -261,15 +259,12 @@ function Contact() {
             </p>
             <div className="cta-features">
               <div className="feature-item">
-                <span className="feature-icon">⚡</span>
                 <span>Resposta Rápida</span>
               </div>
               <div className="feature-item">
-                <span className="feature-icon">💼</span>
                 <span>Profissionalismo</span>
               </div>
               <div className="feature-item">
-                <span className="feature-icon">🎯</span>
                 <span>Foco em Resultados</span>
               </div>
             </div>
