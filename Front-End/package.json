@@ -10,8 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "modules": "^0.4.0",
-    "node": "^25.1.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^6.30.1"
@@ -25,7 +23,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
-    "vite": "npm:rolldown-vite@7.1.14"
+    "vite": "^5.4.0"
   },
   "overrides": {
     "vite": "npm:rolldown-vite@7.1.14"
