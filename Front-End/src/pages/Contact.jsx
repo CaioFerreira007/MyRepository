@@ -234,24 +234,6 @@ ${formData.message}
 
             <div className="form-actions">
               <button
-                type="submit"
-                className="btn-submit"
-                disabled={formStatus.submitting}
-              >
-                {formStatus.submitting ? (
-                  <>
-                    <span className="spinner"></span>
-                    Enviando...
-                  </>
-                ) : (
-                  <>
-                    <span className="btn-icon">📧</span>
-                    Enviar Mensagem
-                  </>
-                )}
-              </button>
-
-              <button
                 type="button"
                 className="btn-whatsapp"
                 onClick={handleWhatsAppSubmit}
