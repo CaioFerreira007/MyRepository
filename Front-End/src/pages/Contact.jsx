@@ -27,6 +27,7 @@ function Contact() {
     e.preventDefault();
     setFormStatus({ submitting: true, submitted: false, error: false });
 
+    // Simulação de envio
     setTimeout(() => {
       setFormStatus({ submitting: false, submitted: true, error: false });
       setFormData({ name: "", email: "", subject: "", message: "" });
@@ -35,6 +36,44 @@ function Contact() {
         setFormStatus({ submitting: false, submitted: false, error: false });
       }, 5000);
     }, 1500);
+  };
+
+  const handleWhatsAppSubmit = (e) => {
+    e.preventDefault();
+
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      setFormStatus({ submitting: false, submitted: false, error: true });
+      return;
+    }
+
+    const mensagem = `
+*Nova mensagem do Portfólio*
+
+*Nome:* ${formData.name}
+*Email:* ${formData.email}
+*Assunto:* ${formData.subject}
+
+*Mensagem:*
+${formData.message}
+    `.trim();
+
+    const mensagemCodificada = encodeURIComponent(mensagem);
+    const numeroWhatsApp = "5521988156436";
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+
+    window.open(urlWhatsApp, "_blank");
+
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setFormStatus({ submitting: false, submitted: true, error: false });
+
+    setTimeout(() => {
+      setFormStatus({ submitting: false, submitted: false, error: false });
+    }, 3000);
   };
 
   const contactInfo = [
@@ -74,12 +113,14 @@ function Contact() {
       username: "@CaioFerreira007",
       url: "https://github.com/CaioFerreira007",
       color: "#00d9ff",
+      icon: "💻",
     },
     {
       name: "LinkedIn",
       username: "Caio Gustavo",
       url: "https://www.linkedin.com/in/caio-ferreira-037820229/",
       color: "#9b59b6",
+      icon: "💼",
     },
   ];
 
@@ -191,20 +232,35 @@ function Contact() {
               ></textarea>
             </div>
 
-            <button
-              type="submit"
-              className="btn-submit"
-              disabled={formStatus.submitting}
-            >
-              {formStatus.submitting ? (
-                <>
-                  <span className="spinner"></span>
-                  Enviando...
-                </>
-              ) : (
-                <>Enviar Mensagem</>
-              )}
-            </button>
+            <div className="form-actions">
+              <button
+                type="submit"
+                className="btn-submit"
+                disabled={formStatus.submitting}
+              >
+                {formStatus.submitting ? (
+                  <>
+                    <span className="spinner"></span>
+                    Enviando...
+                  </>
+                ) : (
+                  <>
+                    <span className="btn-icon">📧</span>
+                    Enviar Mensagem
+                  </>
+                )}
+              </button>
+
+              <button
+                type="button"
+                className="btn-whatsapp"
+                onClick={handleWhatsAppSubmit}
+                disabled={formStatus.submitting}
+              >
+                <span className="whatsapp-icon">📱</span>
+                Enviar via WhatsApp
+              </button>
+            </div>
 
             {formStatus.submitted && (
               <div className="success-message">
@@ -216,13 +272,12 @@ function Contact() {
             {formStatus.error && (
               <div className="error-message">
                 <span className="error-icon">❌</span>
-                Erro ao enviar mensagem. Tente novamente.
+                Por favor, preencha todos os campos.
               </div>
             )}
           </form>
         </div>
 
-        {/* Social Links */}
         <div className="social-section">
           <h2 className="section-title">
             Redes Sociais
@@ -248,7 +303,6 @@ function Contact() {
           </div>
         </div>
 
-        {/* Call to Action */}
         <div className="cta-section">
           <div className="cta-card">
             <h3 className="cta-title">Pronto para começar seu projeto?</h3>
@@ -274,4 +328,5 @@ function Contact() {
     </div>
   );
 }
+
 export default Contact;
