@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/Certifications.css";
+import "../styles/certifications.css";
 
 import backendjr from "../assets/certifications/backendjr.pdf";
 import csharpCompleto from "../assets/certifications/cscompletonelioalves.pdf";
